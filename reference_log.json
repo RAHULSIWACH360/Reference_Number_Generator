@@ -1,0 +1,81 @@
+{
+  "entries": [
+    {
+      "ref_number": "RFSS/42240001/LTR-2026-0001",
+      "format_used": "CO/CONTRACT/TYPE-YEAR-####",
+      "generated_by": "rahul",
+      "to_party": "TPBS",
+      "subject": "",
+      "document_type": "LTR \u2014 Letter",
+      "department": "PR \u2014 Procurement",
+      "project": "KK  \u2014 Kudankulam (India)",
+      "priority": "Urgent",
+      "date": "2026-06-14",
+      "time": "16:58:48",
+      "datetime": "2026-06-14 16:58:48",
+      "serial": 1
+    },
+    {
+      "ref_number": "RFSS-KK-2026-LTR-0001",
+      "generated_by": "Yulia",
+      "to_party": "TPBS@KK",
+      "subject": "aproval",
+      "document_type": "LTR \u2014 Letter",
+      "department": "PM \u2014 Project Management",
+      "project": "KK \u2014 Kudankulam (India)",
+      "priority": "Urgent",
+      "date": "2026-06-14",
+      "time": "22:01:45",
+      "datetime": "2026-06-14 22:01:45",
+      "serial": 1
+    },
+    {
+      "ref_number": "RFSS-ED-2026-QCP-0001",
+      "generated_by": "Danil",
+      "to_party": "TPBS@KK",
+      "subject": "aproval",
+      "document_type": "QCP \u2014 Quality Plan",
+      "department": "QC \u2014 Quality Control",
+      "project": "ED \u2014 El Dabaa (Egypt)",
+      "priority": "Normal",
+      "date": "2026-06-14",
+      "time": "22:04:50",
+      "datetime": "2026-06-14 22:04:50",
+      "serial": 1
+    },
+    {
+      "ref_number": "FINOW-AK-2026-MOM-0001",
+      "generated_by": "Ravi",
+      "to_party": "GBHM",
+      "subject": "Meeting",
+      "document_type": "MOM \u2014 Minutes of Meeting",
+      "department": "PR \u2014 Procurement",
+      "project": "AK \u2014 Akkuyu (Turkey)",
+      "priority": "Low",
+      "date": "2026-06-14",
+      "time": "22:10:51",
+      "datetime": "2026-06-14 22:10:51",
+      "serial": 1
+    },
+    {
+      "ref_number": "FINOW-KK-2026-MOM-0002",
+      "generated_by": "Ravi",
+      "to_party": "GBHM",
+      "subject": "Meeting",
+      "document_type": "MOM \u2014 Minutes of Meeting",
+      "department": "PR \u2014 Procurement",
+      "project": "KK \u2014 Kudankulam (India)",
+      "priority": "Low",
+      "date": "2026-06-14",
+      "time": "22:36:11",
+      "datetime": "2026-06-14 22:36:11",
+      "serial": 2
+    }
+  ],
+  "counters": {
+    "RFSS_42240001_LTR_2026": 1,
+    "RFSS_1234_LTR_2026": 1,
+    "RFSS_TPBS_QCP_2026": 1,
+    "FINOW_TPBS_MOM_2026": 2
+  }
+}
