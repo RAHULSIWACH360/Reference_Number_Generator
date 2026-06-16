@@ -71,6 +71,36 @@
       "datetime": "2026-06-14 22:36:11",
       "serial": 2
     }
+    {
+      "ref_number": "RFSS/4224000135/LTR-2026-0001",
+      "generated_by": "Ram",
+      "to_party": "TPBS EGR GM",
+      "subject": "QA approval",
+      "document_type": "LTR \u2014 Letter",
+      "department": "QC \u2014 Quality Control",
+      "project": "KK \u2014 Kudankulam (India)",
+      "priority": "High",
+      "reply_to": "TPBS/ED/LTR-2026-0042",
+      "date": "2026-06-16",
+      "time": "21:17:45",
+      "datetime": "2026-06-16 21:17:45",
+      "serial": 1
+    },
+    {
+      "ref_number": "RFSS/42240/LTR-2026-0001",
+      "generated_by": "RMTS",
+      "to_party": "AMTS",
+      "subject": "Fund release",
+      "document_type": "LTR \u2014 Letter",
+      "department": "PM \u2014 Project Management",
+      "project": "HAN \u2014 Hanhikivi (Finland)",
+      "priority": "Urgent",
+      "reply_to": "",
+      "date": "2026-06-16",
+      "time": "21:35:25",
+      "datetime": "2026-06-16 21:35:25",
+      "serial": 1
+    }
   ],
   "counters": {
     "RFSS_42240001_LTR_2026": 1,
