@@ -33,6 +33,7 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif !important; }
    Force explicit colours on EVERY state so
    Chrome autofill / translate can't override
 ══════════════════════════════════════════ */
+/* ══ SIDEBAR — Fixed for Yandex Browser / Russian Chrome ══ */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #3A7A72 0%, #56A097 50%, #7ECFC0 100%) !important;
     border-right: 1px solid rgba(255,255,255,0.12) !important;
@@ -41,22 +42,23 @@ section[data-testid="stSidebar"] * { color: #FFFFFF !important; }
 section[data-testid="stSidebar"] h2 {
     color: #FFFFFF !important; font-size: 15px !important; font-weight: 600 !important;
 }
-/* Label */
 section[data-testid="stSidebar"] label,
 section[data-testid="stSidebar"] .stTextInput label {
     color: rgba(255,255,255,0.80) !important;
     font-size: 11px !important; text-transform: uppercase !important;
     letter-spacing: 0.06em !important;
 }
-/* Input — normal, focus, hover, active */
+
+/* FIX: Use a solid opaque background instead of rgba() transparency.
+   Yandex Browser ignores rgba on autofill. Solid colour always wins. */
 section[data-testid="stSidebar"] input,
 section[data-testid="stSidebar"] input:hover,
 section[data-testid="stSidebar"] input:focus,
 section[data-testid="stSidebar"] input:active,
 section[data-testid="stSidebar"] input:not(:placeholder-shown) {
-    background: rgba(255,255,255,0.18) !important;
-    background-color: rgba(255,255,255,0.18) !important;
-    border: 1.5px solid rgba(255,255,255,0.30) !important;
+    background: #2E6B64 !important;
+    background-color: #2E6B64 !important;
+    border: 1.5px solid rgba(255,255,255,0.35) !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     border-radius: 8px !important;
@@ -65,19 +67,23 @@ section[data-testid="stSidebar"] input:not(:placeholder-shown) {
     -webkit-box-shadow: none !important;
     outline: none !important;
 }
-/* Autofill override — the root cause on Russian Chrome */
+
+/* FIX: Match inset shadow colour to the solid input background above.
+   Also add forced-colors fallback for Windows High Contrast / Yandex dark mode. */
 section[data-testid="stSidebar"] input:-webkit-autofill,
 section[data-testid="stSidebar"] input:-webkit-autofill:hover,
 section[data-testid="stSidebar"] input:-webkit-autofill:focus,
 section[data-testid="stSidebar"] input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px #3A7A72 inset !important;
-    box-shadow: 0 0 0 1000px #3A7A72 inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #2E6B64 inset !important;
+    box-shadow: 0 0 0 1000px #2E6B64 inset !important;
     -webkit-text-fill-color: #FFFFFF !important;
     color: #FFFFFF !important;
-    border: 1.5px solid rgba(255,255,255,0.30) !important;
-    background-color: #3A7A72 !important;
+    background-color: #2E6B64 !important;
+    border: 1.5px solid rgba(255,255,255,0.35) !important;
     caret-color: #FFFFFF !important;
+    transition: background-color 9999s ease-in-out 0s !important;
 }
+
 section[data-testid="stSidebar"] input::placeholder { color: rgba(255,255,255,0.45) !important; }
 section[data-testid="stSidebar"] p { color: rgba(255,255,255,0.65) !important; font-size: 11px !important; }
 
@@ -145,28 +151,68 @@ section[data-testid="stSidebar"] p { color: rgba(255,255,255,0.65) !important; f
 }
 .stTextInput input::placeholder { color: #A8C8C4 !important; }
 
-/* ── Selectbox ── */
+/* ══ SELECTBOX — Fixed black dropdown for Yandex Browser ══ */
+
+/* FIX: Use a visible dark-teal instead of near-black #1E2D2C,
+   and never hide text with color:transparent + text-shadow hack */
 div[data-baseweb="select"] > div:first-child {
-    border-radius: 9px !important; border: 1.5px solid #C5E3DF !important;
-    background: #1E2D2C !important; cursor: pointer !important;
+    border-radius: 9px !important;
+    border: 1.5px solid #C5E3DF !important;
+    background: #2D5A54 !important;
+    background-color: #2D5A54 !important;
+    cursor: pointer !important;
 }
+
+/* FIX: Remove the color:transparent / text-shadow trick entirely.
+   Set real white text. Yandex Browser ignores text-shadow fakes. */
 div[data-baseweb="select"] input {
-    pointer-events: none !important; caret-color: transparent !important;
-    cursor: pointer !important; -webkit-user-select: none !important;
-    user-select: none !important; background: transparent !important;
-    border: none !important; box-shadow: none !important;
-    color: rgba(0,0,0,0) !important; text-shadow: 0 0 0 #FFFFFF !important;
+    pointer-events: none !important;
+    caret-color: transparent !important;
+    cursor: pointer !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
 }
-div[data-baseweb="select"] [class*="singleValue"] { color: #FFFFFF !important; font-size: 14px !important; }
-div[data-baseweb="select"] [class*="placeholder"] { color: rgba(255,255,255,0.5) !important; }
+
+div[data-baseweb="select"] [class*="singleValue"] {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    font-size: 14px !important;
+}
+div[data-baseweb="select"] [class*="placeholder"] {
+    color: rgba(255,255,255,0.55) !important;
+    -webkit-text-fill-color: rgba(255,255,255,0.55) !important;
+}
 div[data-baseweb="select"] svg { fill: #7ECFC0 !important; }
-div[data-baseweb="popover"] ul, div[data-baseweb="menu"] {
-    background: #1E2D2C !important; border: 1px solid #3D8B80 !important;
-    border-radius: 10px !important; overflow: hidden !important;
+
+/* Dropdown open state — menu list */
+div[data-baseweb="popover"] ul,
+div[data-baseweb="menu"] {
+    background: #2D5A54 !important;
+    background-color: #2D5A54 !important;
+    border: 1px solid #3D8B80 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
 }
-div[data-baseweb="menu"] li { color: #FFFFFF !important; font-size: 14px !important; background: transparent !important; }
+div[data-baseweb="menu"] li {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    font-size: 14px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
 div[data-baseweb="menu"] li:hover,
-div[data-baseweb="menu"] li[aria-selected="true"] { background: rgba(126,207,192,0.25) !important; color: #FFFFFF !important; }
+div[data-baseweb="menu"] li[aria-selected="true"] {
+    background: rgba(126,207,192,0.28) !important;
+    background-color: rgba(126,207,192,0.28) !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
 
 /* ── Custom project box ── */
 .custom-project-box {
