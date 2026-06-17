@@ -57,7 +57,7 @@ section[data-testid="stSidebar"] input:focus,
 section[data-testid="stSidebar"] input:active,
 section[data-testid="stSidebar"] input:not(:placeholder-shown) {
     background: #2E6B64 !important;
-    background-color: #2E6B64 !important;
+    background-color: #778899 !important;
     border: 1.5px solid rgba(255,255,255,0.35) !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
@@ -159,7 +159,7 @@ div[data-baseweb="select"] > div:first-child {
     border-radius: 9px !important;
     border: 1.5px solid #C5E3DF !important;
     background: #2D5A54 !important;
-    background-color: #2D5A54 !important;
+    background-color: #778899 !important;
     cursor: pointer !important;
 }
 
