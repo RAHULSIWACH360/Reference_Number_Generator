@@ -137,8 +137,8 @@ section[data-testid="stSidebar"] p { color: rgba(255,255,255,0.65) !important; f
    as near-black background with black text. Solid dark-teal #2D5A54 is
    opaque and always renders with white text correctly. */
 div[data-baseweb="select"] > div:first-child {
-    border-radius:9px !important; border:1.5px solid #C5E3DF !important;
-    background:#2D5A54 !important; background-color:#2D5A54 !important;
+    border-radius:9px !important; border:1.5px solid #9CA3AF !important;
+    background:#6B7280 !important; background-color:#6B7280 !important;
     cursor:pointer !important;
 }
 div[data-baseweb="select"] input {
@@ -154,10 +154,10 @@ div[data-baseweb="select"] [class*="singleValue"] {
 div[data-baseweb="select"] [class*="placeholder"] {
     color:rgba(255,255,255,0.55) !important; -webkit-text-fill-color:rgba(255,255,255,0.55) !important;
 }
-div[data-baseweb="select"] svg { fill:#7ECFC0 !important; }
+div[data-baseweb="select"] svg { fill:#FFFFFF !important; }
 div[data-baseweb="popover"] ul, div[data-baseweb="menu"] {
-    background:#2D5A54 !important; background-color:#2D5A54 !important;
-    border:1px solid #3D8B80 !important; border-radius:10px !important; overflow:hidden !important;
+    background:#6B7280 !important; background-color:#6B7280 !important;
+    border:1px solid #9CA3AF !important; border-radius:10px !important; overflow:hidden !important;
 }
 div[data-baseweb="menu"] li {
     color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;
@@ -165,7 +165,7 @@ div[data-baseweb="menu"] li {
 }
 div[data-baseweb="menu"] li:hover,
 div[data-baseweb="menu"] li[aria-selected="true"] {
-    background:rgba(126,207,192,0.28) !important; background-color:rgba(126,207,192,0.28) !important;
+    background:rgba(255,255,255,0.18) !important; background-color:rgba(255,255,255,0.18) !important;
     color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;
 }
 
